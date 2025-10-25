@@ -6,9 +6,9 @@ namespace espacioProductos
         public string descripcion {get;set;}
         public int precio {get;set;}
 
-        public Productos();
+        public Productos() { }
         
-        public void Productos(int id,string descripcion, int precio){
+        public Productos(int id,string descripcion, int precio){
             this.idProducto = id;
             this.descripcion = descripcion;
             this.precio = precio;

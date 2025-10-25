@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alumno\\tl2-tp7-2025-yazmoyano23\\tl2-tp7-2025-yazmoyano23.csproj": {}
+    "C:\\taller2024\\tl2-tp7-2025-yazmoyano23\\tl2-tp7-2025-yazmoyano23.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alumno\\tl2-tp7-2025-yazmoyano23\\tl2-tp7-2025-yazmoyano23.csproj": {
+    "C:\\taller2024\\tl2-tp7-2025-yazmoyano23\\tl2-tp7-2025-yazmoyano23.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\tl2-tp7-2025-yazmoyano23\\tl2-tp7-2025-yazmoyano23.csproj",
+        "projectUniqueName": "C:\\taller2024\\tl2-tp7-2025-yazmoyano23\\tl2-tp7-2025-yazmoyano23.csproj",
         "projectName": "tl2-tp7-2025-yazmoyano23",
-        "projectPath": "C:\\Users\\Alumno\\tl2-tp7-2025-yazmoyano23\\tl2-tp7-2025-yazmoyano23.csproj",
-        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\tl2-tp7-2025-yazmoyano23\\obj\\",
+        "projectPath": "C:\\taller2024\\tl2-tp7-2025-yazmoyano23\\tl2-tp7-2025-yazmoyano23.csproj",
+        "packagesPath": "C:\\Users\\Yazzi\\.nuget\\packages\\",
+        "outputPath": "C:\\taller2024\\tl2-tp7-2025-yazmoyano23\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Yazzi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.Data.SQLite": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -69,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
