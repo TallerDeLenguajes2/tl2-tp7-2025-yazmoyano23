@@ -49,12 +49,64 @@ namespace espacioProdRepo
             {
                 conexion.Open();
                 string consulta = "INSERT INTO Productos(Descripcion,Precio) VALUES (@Descripcion,@Precio)"; //consulta
-                using var insertCmd = new SqliteCommand(consulta, conexion); 
+                using var insertCmd = new SqliteCommand(consulta, conexion);
 
                 insertCmd.Parameters.Add(new SqliteParameter("@Descripcion", nuevoProducto.descripcion));
                 insertCmd.Parameters.Add(new SqliteParameter("@Precio", nuevoProducto.precio));
                 insertCmd.ExecuteNonQuery();
-                    
+
+            }
+        }
+
+        public void ModificarNombreProducto(int idProducto, string nuevoNombre)
+        {
+            using (SqliteConnection conexion = new SqliteConnection(cadenaConexion))
+            {
+                conexion.Open();
+                string consulta = @"UPDATE Productos 
+                                    SET Descripcion = @Descripcion 
+                                    WHERE idProducto = @idProducto";
+                using var updateCmd = new SqliteCommand(consulta, conexion);
+
+                updateCmd.Parameters.Add(new SqliteParameter("@Descripcion", nuevoNombre));
+                updateCmd.Parameters.Add(new SqliteParameter("@idProducto", idProducto));
+                updateCmd.ExecuteNonQuery();
+            }
+        }
+
+        public string GetDescripcion(int idProducto)
+        {
+            using (SqliteConnection conexion = new SqliteConnection(cadenaConexion))
+            {
+                conexion.Open();
+                string consulta = @"SELECT Descripcion 
+                                    FROM Productos
+                                    WHERE idProducto = @idProducto";
+                using var selectCmd = new SqliteCommand(consulta, conexion);
+
+                selectCmd.Parameters.Add(new SqliteParameter("@idProducto", idProducto));
+
+                object? resultado = selectCmd.ExecuteScalar(); //Devuelve resultado de la consulta o null
+
+                return resultado.ToString(); //Paso de object a string 
+
+
+            }
+        }
+
+        public bool Eliminar(int idProducto)
+        {
+            using (SqliteConnection conexion = new SqliteConnection(cadenaConexion))
+            {
+                conexion.Open();
+                string consulta = "DELETE FROM Productos WHERE idProducto = @idProducto";
+
+                using var deleteCmd = new SqliteCommand(consulta, conexion);
+                deleteCmd.Parameters.Add(new SqliteParameter("@idProducto", idProducto));
+                int filasAfectadas = deleteCmd.ExecuteNonQuery();
+
+                //Devuelve true si al menos una fila fue eliminada
+                return filasAfectadas > 0;
             }
         }
     }
