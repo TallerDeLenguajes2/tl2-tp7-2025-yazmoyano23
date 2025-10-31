@@ -51,8 +51,8 @@ namespace espacioProdRepo
                 string consulta = "INSERT INTO Productos(Descripcion,Precio) VALUES (@Descripcion,@Precio)"; //consulta
                 using var insertCmd = new SqliteCommand(consulta, conexion);
 
-                insertCmd.Parameters.Add(new SqliteParameter("@Descripcion", nuevoProducto.descripcion));
-                insertCmd.Parameters.Add(new SqliteParameter("@Precio", nuevoProducto.precio));
+                insertCmd.Parameters.Add(new SqliteParameter("@Descripcion", nuevoProducto.Descripcion));
+                insertCmd.Parameters.Add(new SqliteParameter("@Precio", nuevoProducto.Precio));
                 insertCmd.ExecuteNonQuery();
 
             }
